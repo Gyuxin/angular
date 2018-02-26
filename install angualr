@@ -1,0 +1,26 @@
+Installing the angular
+> npm install -g @angular/cli
+have an error here
+npm ERR! path /usr/local/lib/node_modules
+npm ERR! code EACCES
+npm ERR! errno -13
+npm ERR! syscall access
+npm ERR! Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+npm ERR!  { Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+npm ERR!   stack: 'Error: EACCES: permission denied, access \'/usr/local/lib/node_modules\'',
+npm ERR!   errno: -13,
+npm ERR!   code: 'EACCES',
+npm ERR!   syscall: 'access',
+npm ERR!   path: '/usr/local/lib/node_modules' }
+To solve it:
+GaoYuxins-MacBook-Air:~ Yuxin$ mkdir ~/.npm-global
+GaoYuxins-MacBook-Air:~ Yuxin$ npm config set prefix '~/.npm-global'
+GaoYuxins-MacBook-Air:~ Yuxin$ touch .profile
+GaoYuxins-MacBook-Air:~ Yuxin$ vi .profile
+
+add this line
+export PATH=~/.npm-global/bin:$PATH
+
+GaoYuxins-MacBook-Air:~ Yuxin$ source ~/.profile
+GaoYuxins-MacBook-Air:~ Yuxin$ npm install -g jshint
+GaoYuxins-MacBook-Air:~ Yuxin$ npm install -g @angular/cli
